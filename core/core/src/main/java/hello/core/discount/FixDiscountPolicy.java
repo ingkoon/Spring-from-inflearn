@@ -4,7 +4,7 @@ import hello.core.member.Grade;
 import hello.core.member.Member;
 
 public class FixDiscountPolicy implements DiscountPolicy {
-
+//11111
     private int discountFixAmount = 1000;
 
     @Override
