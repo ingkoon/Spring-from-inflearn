@@ -18,7 +18,8 @@ public class Appconfig {
     //구현체 선언
     @Bean
     public MemberService memberService(){
-        return new MemberServiceImpl(memberRepository());
+//        return new MemberServiceImpl(memberRepository());
+        return new MemberServiceImpl();
     }
 
     // 멤버 리포지토리
@@ -29,7 +30,8 @@ public class Appconfig {
 
     @Bean
     public OrderService orderService(){
-        return new OrderServiceImpl(memberRepository(),discountPolicy());
+//        return new OrderServiceImpl(memberRepository(),discountPolicy());
+        return new OrderServiceImpl();
     }
 
     @Bean
