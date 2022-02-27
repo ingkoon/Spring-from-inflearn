@@ -13,29 +13,34 @@ import org.springframework.context.annotation.Configuration;
 
 
 @Configuration
-public class Appconfig {
+public class AppConfig {
+
+    //@Bean memberService -> new
 
     //구현체 선언
     @Bean
     public MemberService memberService(){
-//        return new MemberServiceImpl(memberRepository());
-        return new MemberServiceImpl();
+        System.out.println("call AppConfig.memberService");
+      return new MemberServiceImpl(memberRepository());
+
     }
 
     // 멤버 리포지토리
     @Bean
     public MemberRepository memberRepository() {
+        System.out.println("call AppConfig.memberRepository");
         return new MemoryMemberRepository();
     }
 
     @Bean
     public OrderService orderService(){
-//        return new OrderServiceImpl(memberRepository(),discountPolicy());
-        return new OrderServiceImpl();
+        System.out.println("call Appconfig.orderSerivce");
+         return new OrderServiceImpl(memberRepository(),discountPolicy());
     }
 
     @Bean
     public DiscountPolicy discountPolicy(){
+        System.out.println("call Appconfig.discountPolicy");
         return new RateDiscountPolicy();
     }
 }

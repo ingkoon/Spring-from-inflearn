@@ -1,8 +1,7 @@
 package hello.core.singleton;
 
-import hello.core.Appconfig;
+import hello.core.AppConfig;
 import hello.core.member.MemberService;
-import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.context.ApplicationContext;
@@ -15,7 +14,7 @@ public class SingletonTest {
     @Test
     @DisplayName("스프링 없는 순수한 DI 컨테이너")
     void pureContainer() {
-        Appconfig appconfig = new Appconfig();
+        AppConfig appconfig = new AppConfig();
         MemberService memberService1 = appconfig.memberService();
 
         MemberService memberService2 = appconfig.memberService();
@@ -48,7 +47,7 @@ public class SingletonTest {
     @DisplayName("스프링 컨테이너와 싱글톤")
     void springContainer(){
 //        Appconfig appconfig = new Appconfig();
-        ApplicationContext ac = new AnnotationConfigApplicationContext(Appconfig.class);
+        ApplicationContext ac = new AnnotationConfigApplicationContext(AppConfig.class);
         MemberService memberService1 = ac.getBean("memberService", MemberService.class);
         MemberService memberService2 = ac.getBean("memberService", MemberService.class);
 
