@@ -13,7 +13,7 @@ import static org.assertj.core.api.Assertions.*;
 import static org.springframework.context.annotation.ComponentScan.*;
 
 public class ComponentFilterAppConfigTest {
-    
+
     @Test
     void filterScan(){
         ApplicationContext ac = new AnnotationConfigApplicationContext(ComponentFilterAppConfig.class);
