@@ -19,6 +19,9 @@ public class MemberController {
 
     private final MemberService memberService;
 
+
+
+
     @GetMapping(value = "/members/new")
     public String createForm(Model model) {
         model.addAttribute("memberForm", new MemberForm());
