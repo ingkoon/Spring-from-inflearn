@@ -12,8 +12,11 @@ repositories {
 	mavenCentral()
 }
 
+
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter'
+	implementation 'org.springframework:org.springframework.web.servlet:3.2.2.RELEASE'
+	implementation 'org.springframework:spring-web:5.3.23'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
 
